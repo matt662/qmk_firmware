@@ -34,6 +34,17 @@ enum custom_keycodes {
 #define KC_RVAI RGB_VAI
 #define KC_RVAD RGB_VAD
 
+#define KC_M_P RGB_MODE_PLAIN
+#define KC_M_B RGB_MODE_BREATHE
+#define KC_M_R RGB_MODE_RAINBOW
+#define KC_M_SW RGB_MODE_SWIRL
+#define KC_M_SN RGB_MODE_SNAKE
+#define KC_M_K RGB_MODE_KNIGHT
+#define KC_M_X RGB_MODE_XMAS
+#define KC_M_G RGB_MODE_GRADIENT
+#define KC_M_T RGB_MODE_RGBTEST
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [_QWERTY] = LAYOUT_kc(
@@ -72,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
          ,    ,    ,VOLU,PGUP,UNDS,               LEFT,DOWN, UP ,RGHT,    ,    ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-         ,    ,MUTE,VOLD,PGDN,MINS,    ,         ,    ,    ,    ,    ,    ,    ,
+         ,    ,MUTE,VOLD,PGDN,MINS,    ,         ,WBAK,    ,    ,WFWD,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,SPC ,         ENT ,    ,
   //                  `----+----+----'        `----+----+----'
@@ -80,13 +91,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT_kc(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-         ,    ,    ,    ,    ,    ,                   ,    ,    ,    ,    ,    ,
+     M_P ,M_B ,M_R ,M_SW,M_SN,M_K ,               M_X ,M_G ,M_T ,    ,    ,RST ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     RTOG,RMOD,RHUI,RSAI,RVAI,    ,                   ,    ,    ,    ,    ,    ,
+     RTOG,RMOD,RHUI,RSAI,RVAI,    ,                   ,    ,    ,    ,    ,DBUG,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,DBUG,RHUD,RSAD,RVAD,    ,                   ,    ,    ,    ,    ,    ,
+         ,    ,RHUD,RSAD,RVAD,    ,                   ,    ,    ,    ,    ,    ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     BL_S,RST ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
+     BL_S,    ,    ,    ,    ,    ,    ,         ,    ,MYCM,    ,CALC,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,    ,             ,    ,
   //                  `----+----+----'        `----+----+----'
